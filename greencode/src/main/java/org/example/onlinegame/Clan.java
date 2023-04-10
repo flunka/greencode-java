@@ -1,4 +1,4 @@
-package org.example;
+package org.example.onlinegame;
 
 import com.dslplatform.json.CompiledJson;
 import com.dslplatform.json.JsonAttribute;

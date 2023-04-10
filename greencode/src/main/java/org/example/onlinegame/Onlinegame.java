@@ -1,4 +1,11 @@
-package org.example;
+package org.example.onlinegame;
+
+import java.io.IOException;
+
+import java.util.Comparator;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
 
 import com.dslplatform.json.DslJson;
 import com.dslplatform.json.JsonWriter;
@@ -7,14 +14,9 @@ import io.activej.http.AsyncServlet;
 import io.activej.bytebuf.ByteBuf;
 import io.activej.http.HttpResponse;
 import io.activej.http.HttpRequest;
-import java.io.IOException;
 
-import java.util.Comparator;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashSet;
-import org.example.Players;
-import org.example.Clan;
+import org.example.onlinegame.Players;
+import org.example.onlinegame.Clan;
 
 public class Onlinegame {
     public static AsyncServlet execute(DslJson<?> dslJson) {

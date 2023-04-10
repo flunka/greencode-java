@@ -1,9 +1,9 @@
-package org.example;
+package org.example.onlinegame;
 
 import com.dslplatform.json.CompiledJson;
 import com.dslplatform.json.JsonAttribute;
 
-import org.example.Clan;
+import org.example.onlinegame.Clan;
 
 @CompiledJson
 class Players {

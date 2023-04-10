@@ -2,6 +2,7 @@ package org.example;
 
 import com.dslplatform.json.DslJson;
 import com.dslplatform.json.runtime.Settings;
+
 import io.activej.http.AsyncServlet;
 import io.activej.http.HttpResponse;
 import io.activej.http.HttpRequest;
@@ -10,10 +11,10 @@ import io.activej.inject.annotation.Provides;
 import io.activej.launcher.Launcher;
 import io.activej.launchers.http.HttpServerLauncher;
 import io.activej.promise.Promise;
-import org.example.ATMService;
-import org.example.Onlinegame;
 
-import org.example.Transactions;
+import org.example.atmservice.ATMService;
+import org.example.onlinegame.Onlinegame;
+import org.example.transactions.Transactions;
 
 import static io.activej.http.HttpMethod.GET;
 import static io.activej.http.HttpMethod.POST;

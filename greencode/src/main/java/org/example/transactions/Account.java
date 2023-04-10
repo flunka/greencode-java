@@ -1,8 +1,7 @@
-package org.example;
+package org.example.transactions;
 
 import com.dslplatform.json.CompiledJson;
 import com.dslplatform.json.JsonAttribute;
-import java.util.Objects;
 
 @CompiledJson
 class Account {

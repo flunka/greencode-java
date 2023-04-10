@@ -1,4 +1,4 @@
-package org.example;
+package org.example.atmservice;
 
 import com.dslplatform.json.CompiledJson;
 import com.dslplatform.json.JsonAttribute;

@@ -1,17 +1,5 @@
-package org.example;
+package org.example.atmservice;
 
-import com.dslplatform.json.DslJson;
-import com.dslplatform.json.JsonWriter;
-import io.activej.http.AsyncServlet;
-import io.activej.bytebuf.ByteBuf;
-import io.activej.http.HttpResponse;
-import io.activej.http.HttpRequest;
-import io.activej.common.collection.Either;
-import io.activej.http.decoder.DecodeErrors;
-import io.activej.http.decoder.Decoder;
-
-import org.example.Task;
-import org.example.ATM;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.ArrayList;
@@ -22,6 +10,20 @@ import java.util.Set;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Comparator;
+
+import com.dslplatform.json.DslJson;
+import com.dslplatform.json.JsonWriter;
+
+import io.activej.http.AsyncServlet;
+import io.activej.bytebuf.ByteBuf;
+import io.activej.http.HttpResponse;
+import io.activej.http.HttpRequest;
+import io.activej.common.collection.Either;
+import io.activej.http.decoder.DecodeErrors;
+import io.activej.http.decoder.Decoder;
+
+import org.example.atmservice.Task;
+import org.example.atmservice.ATM;
 
 public class ATMService {
 

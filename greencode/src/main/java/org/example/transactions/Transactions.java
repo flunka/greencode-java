@@ -1,4 +1,11 @@
-package org.example;
+package org.example.transactions;
+
+import java.io.IOException;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Comparator;
+import java.util.Arrays;
 
 import com.dslplatform.json.DslJson;
 import com.dslplatform.json.JsonWriter;
@@ -8,13 +15,8 @@ import io.activej.http.HttpResponse;
 import io.activej.http.HttpRequest;
 import io.activej.bytebuf.ByteBuf;
 
-import java.io.IOException;
-import org.example.Transaction;
-import org.example.Account;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Comparator;
-import java.util.Arrays;
+import org.example.transactions.Transaction;
+import org.example.transactions.Account;
 
 public class Transactions {
     public static AsyncServlet execute(DslJson<?> dslJson) {

@@ -41,11 +41,11 @@ public class ATMService {
                                                 try {
                                                         dslJson.serialize(writer, atms);
                                                 } catch (IOException e) {
-                                                        return HttpResponse.ofCode(400).withHtml(e.toString());
+                                                        return HttpResponse.ofCode(400).withHtml("Invalid payload");
                                                 }
                                                 return HttpResponse.ok200().withJson(writer.toString());
                                         } catch (IOException e) {
-                                                return HttpResponse.ofCode(400).withHtml(e.toString());
+                                                return HttpResponse.ofCode(400).withHtml("Invalid payload");
                                         }
                                 });
         }

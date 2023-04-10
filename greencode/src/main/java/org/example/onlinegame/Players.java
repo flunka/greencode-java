@@ -27,6 +27,6 @@ class Players {
 
     @Override
     public String toString() {
-        return "Clan{groupCount='" + groupCount + '\'' + ", clans=" + clans + '}';
+        return "Clan{groupCount='" + groupCount + '\'' + ", clans=" + clans.length + '}';
     }
 }

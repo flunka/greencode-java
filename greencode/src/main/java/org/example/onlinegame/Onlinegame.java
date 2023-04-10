@@ -72,7 +72,7 @@ public class Onlinegame {
 class SortbyGameRules implements Comparator<Clan> {
 
     public int compare(Clan a, Clan b) {
-        if (a.getPoints() != b.getPoints()) {
+        if (!a.getPoints().equals(b.getPoints())) {
             return b.getPoints() - a.getPoints();
         }
         return a.getNumberOfPlayers() - b.getNumberOfPlayers();

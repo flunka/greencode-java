@@ -36,7 +36,7 @@ class ATM {
         if (o == null || getClass() != o.getClass())
             return false;
         ATM that = (ATM) o;
-        return region == that.region && atmId == that.atmId;
+        return region.equals(that.region) && atmId.equals(that.atmId);
     }
 
     @Override

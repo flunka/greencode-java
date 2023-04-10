@@ -76,8 +76,9 @@ class SortbyRules implements Comparator<Task> {
                 taskPriorities = Collections.unmodifiableMap(aMap);
         }
 
+        @Override
         public int compare(Task a, Task b) {
-                if (a.getRegion() != b.getRegion()) {
+                if (!a.getRegion().equals(b.getRegion())) {
                         return a.getRegion() - b.getRegion();
                 }
                 return SortbyRules.taskPriorities.get(a.getRequestType())

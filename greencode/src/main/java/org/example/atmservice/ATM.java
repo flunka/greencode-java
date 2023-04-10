@@ -6,9 +6,9 @@ import java.util.Objects;
 
 @CompiledJson
 class ATM {
-    @JsonAttribute(name = "region")
+    @JsonAttribute(name = "region", mandatory = true)
     private final Integer region;
-    @JsonAttribute(name = "atmId")
+    @JsonAttribute(name = "atmId", mandatory = true)
     private final Integer atmId;
 
     public ATM(Integer region, Integer atmId) {

@@ -5,9 +5,9 @@ import com.dslplatform.json.JsonAttribute;
 
 @CompiledJson
 class Clan {
-    @JsonAttribute(name = "numberOfPlayers")
+    @JsonAttribute(name = "numberOfPlayers", mandatory = true)
     private final Integer numberOfPlayers;
-    @JsonAttribute(name = "points")
+    @JsonAttribute(name = "points", mandatory = true)
     private final Integer points;
 
     public Clan(Integer numberOfPlayers, Integer points) {

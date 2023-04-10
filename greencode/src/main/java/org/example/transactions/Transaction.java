@@ -5,11 +5,11 @@ import com.dslplatform.json.JsonAttribute;
 
 @CompiledJson
 class Transaction {
-    @JsonAttribute(name = "debitAccount")
+    @JsonAttribute(name = "debitAccount", mandatory = true)
     private final String debitAccount;
-    @JsonAttribute(name = "creditAccount")
+    @JsonAttribute(name = "creditAccount", mandatory = true)
     private final String creditAccount;
-    @JsonAttribute(name = "amount")
+    @JsonAttribute(name = "amount", mandatory = true)
     private final Double amount;
 
     public Transaction(String debitAccount, String creditAccount, Double amount) {

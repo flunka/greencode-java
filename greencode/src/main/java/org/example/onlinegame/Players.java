@@ -9,9 +9,9 @@ import org.example.onlinegame.Clan;
 
 @CompiledJson
 class Players {
-    @JsonAttribute(name = "groupCount")
+    @JsonAttribute(name = "groupCount", mandatory = true)
     private final Integer groupCount;
-    @JsonAttribute(name = "clans")
+    @JsonAttribute(name = "clans", mandatory = true)
     private ArrayList<Clan> clans;
 
     public Players(Integer groupCount, ArrayList<Clan> clans) {

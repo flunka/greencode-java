@@ -5,13 +5,13 @@ import com.dslplatform.json.JsonAttribute;
 
 @CompiledJson
 class Account {
-    @JsonAttribute(name = "account")
+    @JsonAttribute(name = "account", mandatory = true)
     private final String account;
-    @JsonAttribute(name = "debitCount")
+    @JsonAttribute(name = "debitCount", mandatory = true)
     private int debitCount;
-    @JsonAttribute(name = "creditCount")
+    @JsonAttribute(name = "creditCount", mandatory = true)
     private int creditCount;
-    @JsonAttribute(name = "balance")
+    @JsonAttribute(name = "balance", mandatory = true)
     private Double balance;
 
     public Account(String account, int debitCount, int creditCount, Double balance) {

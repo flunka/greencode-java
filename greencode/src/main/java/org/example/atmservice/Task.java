@@ -5,11 +5,11 @@ import com.dslplatform.json.JsonAttribute;
 
 @CompiledJson
 class Task {
-    @JsonAttribute(name = "region")
+    @JsonAttribute(name = "region", mandatory = true)
     private final Integer region;
-    @JsonAttribute(name = "requestType")
+    @JsonAttribute(name = "requestType", mandatory = true)
     private final String requestType;
-    @JsonAttribute(name = "atmId")
+    @JsonAttribute(name = "atmId", mandatory = true)
     private final Integer atmId;
 
     public Task(Integer region, String requestType, Integer atmId) {

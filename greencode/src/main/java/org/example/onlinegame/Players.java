@@ -1,5 +1,7 @@
 package org.example.onlinegame;
 
+import java.util.ArrayList;
+
 import com.dslplatform.json.CompiledJson;
 import com.dslplatform.json.JsonAttribute;
 
@@ -10,9 +12,9 @@ class Players {
     @JsonAttribute(name = "groupCount")
     private final Integer groupCount;
     @JsonAttribute(name = "clans")
-    private final Clan[] clans;
+    private ArrayList<Clan> clans;
 
-    public Players(Integer groupCount, Clan[] clans) {
+    public Players(Integer groupCount, ArrayList<Clan> clans) {
         this.groupCount = groupCount;
         this.clans = clans;
     }
@@ -21,12 +23,12 @@ class Players {
         return groupCount;
     }
 
-    public Clan[] getClans() {
+    public ArrayList<Clan> getClans() {
         return clans;
     }
 
     @Override
     public String toString() {
-        return "Clan{groupCount='" + groupCount + '\'' + ", clans=" + clans.length + '}';
+        return "Clan{groupCount='" + groupCount + '\'' + ", clans=" + clans.size() + '}';
     }
 }

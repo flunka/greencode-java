@@ -2,10 +2,10 @@ package org.example.onlinegame;
 
 import java.io.IOException;
 
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashSet;
+import java.util.Iterator;
 
 import com.dslplatform.json.DslJson;
 import com.dslplatform.json.JsonWriter;
@@ -27,8 +27,8 @@ public class Onlinegame {
                         byte[] bodyBytes = body.getArray();
                         Players players = dslJson.deserialize(Players.class, bodyBytes,
                                 bodyBytes.length);
-                        Clan[] clans = players.getClans();
-                        Arrays.sort(clans, new SortbyGameRules());
+                        ArrayList<Clan> clans = players.getClans();
+                        Collections.sort(clans, new SortbyGameRules());
                         ArrayList<ArrayList<Clan>> order = Onlinegame.getGroupOrder(clans, players.getGroupCount());
                         JsonWriter writer = dslJson.newWriter();
                         try {
@@ -43,24 +43,24 @@ public class Onlinegame {
                 });
     }
 
-    static ArrayList<ArrayList<Clan>> getGroupOrder(Clan[] clans, int groupCount) {
-        HashSet<Clan> seen = new HashSet<Clan>();
+    static ArrayList<ArrayList<Clan>> getGroupOrder(ArrayList<Clan> clans, int groupCount) {
         ArrayList<ArrayList<Clan>> order = new ArrayList<ArrayList<Clan>>();
-        int numberOfClans = clans.length;
-        while (seen.size() < numberOfClans) {
+
+        while (!clans.isEmpty()) {
+            Iterator<Clan> it = clans.iterator();
             ArrayList<Clan> groups = new ArrayList<Clan>();
             int groupSize = 0;
-            for (int i = 0; i < numberOfClans && groupSize < groupCount; i++) {
-                Clan clan = clans[i];
-                if (seen.contains(clan)) {
-                    continue;
-                }
+            while (it.hasNext()) {
+                Clan clan = it.next();
                 if (clan.getNumberOfPlayers() + groupSize > groupCount) {
                     continue;
                 }
                 groups.add(clan);
                 groupSize += clan.getNumberOfPlayers();
-                seen.add(clan);
+                it.remove();
+                if (groupSize < groupCount) {
+                    break;
+                }
             }
             order.add(groups);
         }
